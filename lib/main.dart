@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:timerbloc/BlocObserver.dart';
 import 'package:timerbloc/presentation/timerscreen.dart';
 
 void main() {
+  Bloc.observer = TimerBlocObserver();
+
   runApp(const MyApp());
 }
 

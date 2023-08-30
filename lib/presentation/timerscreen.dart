@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:timerbloc/presentation/timer_widget.dart';
 
 class MyTimerPage extends StatefulWidget {
   const MyTimerPage({super.key, required this.title});
@@ -20,8 +21,8 @@ class _MyTimerPageState extends State<MyTimerPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: ,
+      body: const Center(
+        child: Timer(),
       ),
     );
   }

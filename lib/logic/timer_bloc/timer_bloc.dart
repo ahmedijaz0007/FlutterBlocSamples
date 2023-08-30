@@ -14,21 +14,11 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
   final Ticker ticker;
   StreamSubscription<int>? _tickerStream;
   TimerBloc({required this.ticker}) : super(const TimerInitial(_initialduration)) {
-    on<TimerEvent>((event, emit) {
-      // switch(event){
-      //   case TimerStartedEvent:{
-      //
-      //
-      //     emit(TimerRunning(state.duration));
-      //   }
-      //   case TimerTickEvent:{
-      //     emit(TimerRunning(state.duration - 1));
-      //   }
-      //   case
-      // }
-
-
-    });
+    on<TimerStartedEvent>(_onStarted);
+    on<TimerPausedEvent>(_onPaused);
+    on<TimerTickEvent>(_onTicked);
+    on<TimerResetEvent>(_onReset);
+    on<TimerResumedEvent>(_onResume);
   }
 
 
